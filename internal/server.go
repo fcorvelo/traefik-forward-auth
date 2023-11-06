@@ -57,7 +57,7 @@ func (s *Server) buildRoutes() {
 func (s *Server) RootHandler(w http.ResponseWriter, r *http.Request) {
 	// Modify request
 	
-	// Avoid HEAD bug - https://github.com/fcorvelo/traefik-forward-auth/issues/156
+	// Avoid HEAD bug - https://github.com/thomseddon/traefik-forward-auth/issues/156
 	var m = r.Header.Get("X-Forwarded-Method")
 	if m != "HEAD" {
 		r.Method = m
