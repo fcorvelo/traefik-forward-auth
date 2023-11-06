@@ -513,3 +513,10 @@ Note: This only clears the auth cookie from the users browser and as this servic
 ## License
 
 [MIT](https://github.com/fcorvelo/traefik-forward-auth/blob/master/LICENSE.md)
+
+## Build
+
+```
+$ docker buildx create --use
+$ docker buildx build --platform linux/amd64 --push -t fcorvelo/traefik-forward-auth:latest .
+```
