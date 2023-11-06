@@ -6,7 +6,7 @@ import (
 
 	"github.com/containous/traefik/v2/pkg/rules"
 	"github.com/sirupsen/logrus"
-	"github.com/thomseddon/traefik-forward-auth/internal/provider"
+	"github.com/fcorvelo/traefik-forward-auth/internal/provider"
 )
 
 // Server contains router and handler methods
@@ -57,7 +57,7 @@ func (s *Server) buildRoutes() {
 func (s *Server) RootHandler(w http.ResponseWriter, r *http.Request) {
 	// Modify request
 	
-	// Avoid HEAD bug - https://github.com/thomseddon/traefik-forward-auth/issues/156
+	// Avoid HEAD bug - https://github.com/fcorvelo/traefik-forward-auth/issues/156
 	var m = r.Header.Get("X-Forwarded-Method")
 	if m != "HEAD" {
 		r.Method = m
